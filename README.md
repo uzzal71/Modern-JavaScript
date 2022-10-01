@@ -1,8 +1,3 @@
-# Modern-JavaScript
-Modern JavaScript Syntaxes Introduction
-
-### 01 - Introduction - Modern JavaScript
-### 02 - JavaScript Fat Arrow Functions
 ```
 function number() {
     return 10;
