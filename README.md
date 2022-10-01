@@ -245,3 +245,32 @@ searchInput.addEventListener("keyup", () => {
 });
 
 ```
+
+#### JavaScript normal function is a self constructor
+
+```
+// New Keyword in Fat Arrow Function
+
+function Person(name) {
+    this.name = name;
+}
+
+const sakib = new Person("Sakib");
+```
+
+Output:
+Not Error
+
+```
+// New Keyword in Fat Arrow Function
+
+var Person = (name) => {
+    this.name = name;
+}
+
+const sakib = new Person("Sakib");
+
+```
+
+Output:
+TypeError: Person is not a constructor

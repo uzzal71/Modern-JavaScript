@@ -1,20 +1,7 @@
-const searchInput = document.querySelector(".search");
+// New Keyword in Fat Arrow Function
 
-const display = document.querySelector(".result");
-
-const thanks = document.querySelector(".thanks");
-
-/* Normal Function that works perfectly */
-function show() {
-  display.innerHTML = this.value;
-  var self = this;
-  setTimeout(function () {
-    thanks.innerHTML = `You have typed: ${self.value}`;
-  }, 1000);
+var Person = (name) => {
+    this.name = name;
 }
 
-// const showme = () => {
-//     display.innerHTML = this.value;
-// };
-
-searchInput.addEventListener("keyup", show);
+const sakib = new Person("Sakib");
