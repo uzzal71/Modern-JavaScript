@@ -1,12 +1,20 @@
-// ES6 Fat Arrow Functions
+const searchInput = document.querySelector(".search");
 
-var javascript = {
-  name: "JavaScript",
-  libraries: ["React", "Angular", "Vue"],
-  printLibraries: function () {
-    var self = this;
-    this.libraries.forEach((a) => console.log(`${self.name} loves ${a}`));
-  },
-};
+const display = document.querySelector(".result");
 
-javascript.printLibraries();
+const thanks = document.querySelector(".thanks");
+
+/* Normal Function that works perfectly */
+function show() {
+  display.innerHTML = this.value;
+  var self = this;
+  setTimeout(function () {
+    thanks.innerHTML = `You have typed: ${self.value}`;
+  }, 1000);
+}
+
+// const showme = () => {
+//     display.innerHTML = this.value;
+// };
+
+searchInput.addEventListener("keyup", show);
