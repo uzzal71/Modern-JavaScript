@@ -1,9 +1,12 @@
 // ES6 Fat Arrow Functions
 
-// function number() {
-//     return 10;
-// }
+var javascript = {
+  name: "JavaScript",
+  libraries: ["React", "Angular", "Vue"],
+  printLibraries: function () {
+    var self = this;
+    this.libraries.forEach((a) => console.log(`${self.name} loves ${a}`));
+  },
+};
 
-let number = () => 10
-
-console.log(number());
+javascript.printLibraries();

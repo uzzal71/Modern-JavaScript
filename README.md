@@ -1,3 +1,4 @@
+#### 01 Introduction Modern JavaScript
 ```
 function number() {
     return 10;
@@ -50,4 +51,170 @@ let number = (a, b) => {
     return a + b;
 }
 console.log(number(10, 5));
+```
+#### This Key Work
+```
+// ES6 Fat Arrow Functions
+
+var javascript = {
+  name: "JavaScript",
+  libraries: ["React", "Angular", "Vue"],
+  printLibraries: function () {
+    this.libraries.forEach(function (a) {
+      console.log(`${this.name} loves ${a}`);
+    });
+  },
+};
+
+javascript.printLibraries();
+```
+Output:
+```
+undefined loves React
+undefined loves Angular
+undefined loves Vue 
+```
+Here this.name not found
+
+```
+// ES6 Fat Arrow Functions
+
+var javascript = {
+  name: "JavaScript",
+  libraries: ["React", "Angular", "Vue"],
+  printLibraries: function () {
+    console.log(this);
+    this.libraries.forEach(function (a) {
+      console.log(`${this.name} loves ${a}`);
+    });
+  },
+};
+
+javascript.printLibraries();
+```
+
+Outout:
+```
+{
+  name: 'JavaScript',
+  libraries: [ 'React', 'Angular', 'Vue' ], 
+  printLibraries: [Function: printLibraries]
+}
+undefined loves React
+undefined loves Angular
+undefined loves Vue
+```
+
+```
+// ES6 Fat Arrow Functions
+
+var javascript = {
+  name: "JavaScript",
+  libraries: ["React", "Angular", "Vue"],
+  printLibraries: function () {
+    this.libraries.forEach(function (a) {
+      console.log(this);
+      console.log(`${this.name} loves ${a}`);
+    });
+  },
+};
+
+javascript.printLibraries();
+```
+
+Output:
+```
+<ref *1> Object [global] {
+  global: [Circular *1],
+  clearInterval: [Function: clearInterval],
+  clearTimeout: [Function: clearTimeout],
+  setInterval: [Function: setInterval],
+  setTimeout: [Function: setTimeout] {
+    [Symbol(nodejs.util.promisify.custom)]: [Getter]
+  },
+  queueMicrotask: [Function: queueMicrotask],       
+  clearImmediate: [Function: clearImmediate],       
+  setImmediate: [Function: setImmediate] {
+    [Symbol(nodejs.util.promisify.custom)]: [Getter]
+  }
+}
+undefined loves React
+<ref *1> Object [global] {
+  global: [Circular *1],
+  clearInterval: [Function: clearInterval],
+  clearTimeout: [Function: clearTimeout],
+  setInterval: [Function: setInterval],
+  setTimeout: [Function: setTimeout] {
+    [Symbol(nodejs.util.promisify.custom)]: [Getter]
+  },
+  queueMicrotask: [Function: queueMicrotask],
+  clearImmediate: [Function: clearImmediate],
+  setImmediate: [Function: setImmediate] {
+    [Symbol(nodejs.util.promisify.custom)]: [Getter]
+  }
+}
+undefined loves Angular
+<ref *1> Object [global] {
+  global: [Circular *1],
+  clearInterval: [Function: clearInterval],
+  clearTimeout: [Function: clearTimeout],
+  setInterval: [Function: setInterval],
+  setTimeout: [Function: setTimeout] {
+    [Symbol(nodejs.util.promisify.custom)]: [Getter]
+  },
+  queueMicrotask: [Function: queueMicrotask],
+  clearImmediate: [Function: clearImmediate],
+  setImmediate: [Function: setImmediate] {
+    [Symbol(nodejs.util.promisify.custom)]: [Getter]
+  }
+}
+undefined loves Vue
+```
+
+```
+// ES6 Fat Arrow Functions
+
+var javascript = {
+  name: "JavaScript",
+  libraries: ["React", "Angular", "Vue"],
+  printLibraries: function () {
+    this.libraries.forEach(function (a) {
+      console.log(`${self.name} loves ${a}`);
+    });
+  },
+};
+
+javascript.printLibraries();
+```
+
+Output:
+```
+JavaScript loves React
+JavaScript loves Angular
+JavaScript loves Vue  
+```
+
+#### arrow function this keyword variable cann't changed
+
+```
+// ES6 Fat Arrow Functions
+
+var javascript = {
+  name: "JavaScript",
+  libraries: ["React", "Angular", "Vue"],
+  printLibraries: function () {
+    var self = this;
+    this.libraries.forEach((a) => console.log(`${self.name} loves ${a}`));
+  },
+};
+
+javascript.printLibraries();
+
+```
+
+Output:
+```
+JavaScript loves React
+JavaScript loves Angular
+JavaScript loves Vue  
 ```
