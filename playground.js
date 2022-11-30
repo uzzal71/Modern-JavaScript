@@ -14,8 +14,6 @@
 
 // console.log(number());
 
-let number = () => {
-    return 20;
-}
+let number = () => 20;
 
 console.log(number());
